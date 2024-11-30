@@ -1,0 +1,38 @@
+{
+  "detections": [
+    {
+      "object_name": "person",
+      "description": "Two adults walking side by side.",
+      "features": {
+        "upper_clothing_color": "black",
+        "lower_clothing_color": "white",
+        "size": "medium",
+        "posture": "walking",
+        "age_group": "adult",
+        "gender": "male",
+        "accessories": ["hat"],
+        "additional_notes": "Person on the right is wearing a black hat."
+      }
+    },
+    {
+      "object_name": "unknown",
+      "description": "Unclear object, potentially a person or a vehicle.",
+      "features": {
+        "primary_color": "unknown",
+        "size": "unknown",
+        "additional_notes": "Image is too blurred for detailed analysis."
+      }
+    },
+    {
+      "object_name": "bicycle",
+      "description": "A person riding a bicycle.",
+      "features": {
+        "color1": "black",
+        "color2": "unknown",
+        "size": "medium",
+        "orientation": "lateral",
+        "type": "unknown"
+      }
+    }
+  ]
+}
