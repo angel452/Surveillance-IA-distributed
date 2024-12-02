@@ -1,0 +1,145 @@
+/* Estilos generales para un tema oscuro */
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+}
+
+.table-container {
+    margin: 20px 0;
+    overflow-x: auto;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #333; /* Fondo oscuro para la tabla */
+    color: #e0e0e0; /* Texto en color claro */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #444; /* Línea divisoria suave */
+}
+
+/* Cabecera */
+th {
+    background-color: #444;
+    color: #fff;
+    font-size: 16px;
+}
+
+tr:nth-child(even) {
+    background-color: #222222; /* Color alternativo para filas */
+}
+
+tr:hover {
+    background-color: #535151; /* Color de fila al pasar el cursor */
+}
+
+/* Estilo para los botones */
+button {
+    padding: 8px 12px;
+    border: 1px solid #555;
+    background-color: #444;
+    color: #e0e0e0;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    margin: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Cambio de color de los botones al pasar el cursor */
+button:hover {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+/* Estilo para los botones activos */
+button.active {
+    background-color: #28a745;
+    color: white;
+    border-color: #28a745;
+}
+
+/* Botones deshabilitados */
+button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+/* Contenedor de lista de características */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 5px 0;
+}
+
+/* Botón "Make Query" */
+.make-query-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.make-query-button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para la subtabla de features */
+.features-table {
+    width: 100%;
+    margin-top: 10px;
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    border-collapse: collapse;
+}
+
+/* Cambiar el layout de los botones de los features a una fila */
+.features-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+    /* Asegurarnos de que el contenido de cada celda no se expanda más de lo necesario */
+}
+
+/* Se aplica el flexbox en el contenedor de los botones de features (no en cada celda) */
+.features-table .button-container {
+    display: flex;
+    flex-wrap: wrap; /* Los botones se envuelven si es necesario */
+    gap: 8px; /* Espaciado entre los botones */
+    justify-content: flex-start; /* Alineación al inicio (a la izquierda) */
+}
+
+/* Estilo para los botones dentro de la subtabla */
+.features-table button {
+    margin: 5px;
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+.features-table button:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.features-table button.active {
+    background-color: #28a745;
+    color: white;
+}

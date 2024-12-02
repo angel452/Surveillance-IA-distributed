@@ -56,6 +56,7 @@ def process_motion(video_path, output_folder):
     ret, scenario_frame = capture.read()
     if ret:
         escenario_path = os.path.join(video_folder, "escenario.jpg")
+        print("path1:", escenario_path)
         cv2.imwrite(escenario_path, scenario_frame)  # Guardar el frame directamente como JPG
 
     # Lógica original para guardar "middle" si no hay picos
@@ -70,6 +71,7 @@ def process_motion(video_path, output_folder):
 
     # Analizar el escenario
     escenario_path = os.path.join(video_folder, "escenario.jpg")
+    print("path: ", escenario_path)
     if os.path.exists(escenario_path):
         print("Analizando escenario...")
         scene_analysis = detect_scene(escenario_path)
@@ -79,6 +81,7 @@ def process_motion(video_path, output_folder):
 
     # Analizar collages
     collage_files = glob.glob(os.path.join(video_folder, "collage_*.png"))
+    print("Path collage: ", collage_files)
     for collage_path in collage_files:
         print(f"Analizando collage: {collage_path}...")
         object_analysis = detect_objects(collage_path)

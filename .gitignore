@@ -26,3 +26,5 @@ yolov*
 __pycache__/
 
 .env
+
+iaDistributed-env/*

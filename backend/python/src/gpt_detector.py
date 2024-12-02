@@ -1,7 +1,14 @@
 import base64
 from openai import OpenAI
+from dotenv import load_dotenv
+import os
 
-client = OpenAI(api_key='OPENAI_API_KEY')
+api_key = os.getenv('OPENAI_API_KEY')
+if not api_key:
+    raise ValueError("La clave API no se encontró en las variables de entorno.")
+
+client = OpenAI(api_key=api_key)
+
 
 
 def extract_content_including_curly_braces(text):
@@ -22,38 +29,56 @@ def encode_image(image_path):
 
 # Función para realizar la detección del escenario
 def detect_scene(image_path):
-    base64_image = encode_image(image_path)
-    prompt = '''Analyze the provided image and generate a structured JSON output describing the scene. Ensure the "scene" object includes:
+    try:
+        base64_image = encode_image(image_path)
+        prompt = '''Analyze the provided image and generate a structured JSON output describing the scene. Ensure the "scene" object includes:
 
-    - environment_type: A single-word description of the environment type (e.g., parking_lot, street, park, beach, plaza, etc.).
-    - description: A natural language description of the scene where objects are locate d.
-    - features: A set of scene features:
-        - weather: Weather condition (single-word:sunny, rainy, cloudy, etc.).
-        - time_of_day: Time of day (single-word: day, night, sunset, etc.).
-        - terrain: Terrain type (single-word: paved, grass, water, etc.).
-        - crowd_level: Crowd level (single-word: high, medium, low).
-        - lighting: Lighting type (single-word:natural, artificial).
+        - environment_type: A single-word description of the environment type (e.g., parking_lot, street, park, beach, plaza, etc.).
+        - description: A natural language description of the scene where objects are located.
+        - features: A set of scene features:
+            - weather: Weather condition (single-word: sunny, rainy, cloudy, etc.).
+            - time_of_day: Time of day (single-word: day, night, sunset, etc.).
+            - terrain: Terrain type (single-word: paved, grass, water, etc.).
+            - crowd_level: Crowd level (single-word: high, medium, low).
+            - lighting: Lighting type (single-word: natural, artificial).
 
-    The response should focus only on the scene description and avoid object-specific details. Provide the result in English.
-    in Json format, only the json, not comments of result
-    '''
+        The response should focus only on the scene description and avoid object-specific details. Provide the result in English.
+        in JSON format, only the JSON, not comments of result
+        '''
 
-    response = client.chat.completions.create(
-        model="gpt-4o",
-        messages=[
-            {
-                "role": "user",
-                "content": [
-                    {"type": "text", "text": prompt},
-                    {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{base64_image}"}},
-                ],
-            }
-        ],
-    )
-    return extract_content_including_curly_braces(response.choices[0].message.content)
+        response = client.chat.completions.create(
+            model="gpt-4o",
+            messages=[
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "text", "text": prompt},
+                        {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{base64_image}"}},
+                    ],
+                }
+            ],
+        )
+
+        print("data gpt: ", response.choices[0].message.content)
+        result = extract_content_including_curly_braces(response.choices[0].message.content)
+        return result
+
+    except FileNotFoundError:
+        print(f"Error: The file '{image_path}' was not found.")
+        return {"error": "File not found"}
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+        return {"error": str(e)}
+
 
 # Función para realizar la detección de objetos
 def detect_objects(image_path):
+
+    # Simulando la respuesta JSON directamente
+    return '''{
+        "detections": [ ]
+    }'''
+
     base64_image = encode_image(image_path)
     prompt = '''Analyze the provided image and generate a structured JSON output describing the detected objects. The JSON output should contain an array called "detections" with individual entries for each object detected. Each entry should follow the structure based on the object type (person, vehicle, or other objects). 
 

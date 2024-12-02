@@ -5,6 +5,8 @@ import ScanButton from './components/ScanButton';
 import SearchBar from './components/SearchBar';
 import VideoList from './components/VideoList';
 import mockData from './mockData.json';
+import VideoResults from './components/VideoResults';
+import axios from 'axios';
  
 const App = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -14,11 +16,31 @@ const App = () => {
   const [menuPosition, setMenuPosition] = useState({ x: 0, y: 0 });
   const [videoData, setVideoData] = useState(null);
   const [containerWidth, setContainerWidth] = useState(500); // default width
-  const [results, setResults] = useState(mockData);
+  const [results] = useState(mockData);
+  //const [setResults] = useState(mockData);
   const [videoPaths, setVideoPaths] = useState({}); // Stores loaded video paths
   const [scanResults, setScanResults] = useState([]); // Stores scan results from the backend
   const containerRef = useRef(null);
   const resizeRef = useRef(false);
+
+  const [videos, setVideos] = useState([]); // Lista de videos escaneados
+  const [loading, setLoading] = useState(true);
+
+  const [finalResults, setFinalResults] = useState([]);
+
+  const [scanning, setScanning] = useState(false); // Para saber si esta en proceso de escaneo
+
+  const fetchVideos = async () => {
+    try {
+      const response = await axios.get('http://localhost:5000/api/videos/videos');
+      setVideos(response.data.videos);
+      setLoading(false);
+    }
+    catch (error) {
+      console.error('Error fetching videos:', error);
+      setLoading(false);
+    }
+  };
 
   const handleSearch = (query) => {
     setSearchQuery(query);
@@ -59,6 +81,7 @@ const App = () => {
     }
   };
 
+  //eslint-disable-next-line
   const handleClickOutside = (e) => {
     if (menuVisible && !containerRef.current.contains(e.target)) {
       setMenuVisible(false);
@@ -114,32 +137,33 @@ const App = () => {
     }
   };
 
-  const handleScanVideos = async () => {
-    try {
-      const response = await fetch('http://localhost:5000/api/videos/scan', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          videos: Object.values(videoPaths), // Asegúrate de enviar los videos correctamente
-        }),
-      });
+  // const handleScanVideos = async () => {
+  //   try {
+  //     const response = await fetch('http://localhost:5000/api/videos/scan', {
+  //       method: 'POST',
+  //       headers: { 'Content-Type': 'application/json' },
+  //       body: JSON.stringify({
+  //         videos: Object.values(videoPaths), // Asegúrate de enviar los videos correctamente
+  //       }),
+  //     });
   
-      if (!response.ok) throw new Error('Error scanning videos..');
-      const data = await response.json();
-      setScanResults(data.results); // Asegúrate de que el backend devuelve resultados de la escaneo
-      alert('Videos scanned successfully');
-    } catch (error) {
-      console.error('Error scanning videos...:', error);
-      alert('Failed to scan videos. Check the backend.');
-    }
-  };  
+  //     if (!response.ok) throw new Error('Error scanning videos..');
+  //     const data = await response.json();
+  //     setScanResults(data.results); // Asegúrate de que el backend devuelve resultados de la escaneo
+  //     alert('Videos scanned successfully');
+  //   } catch (error) {
+  //     console.error('Error scanning videos...:', error);
+  //     alert('Failed to scan videos. Check the backend.');
+  //   }
+  // };  
 
   useEffect(() => {
+    fetchVideos();
     document.addEventListener('click', handleClickOutside);
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };
-  }, [menuVisible]);
+  }, [menuVisible, handleClickOutside]);
 
   const renderSearchResults = () => {
     if (!searchQuery) return <p>No search results</p>;
@@ -153,7 +177,7 @@ const App = () => {
         <div key={index}>
           <strong>{item.keyword}</strong> - {item.description} -{' '}
           <a
-            href="#"
+            href="/"
             onClick={() => handleLinkClick(item.time, item.video)}
             style={{ color: 'blue', textDecoration: 'underline' }}
           >
@@ -168,12 +192,56 @@ const App = () => {
 
   return (
     <div>
+      {/* Header Component */}
       <Header />
+
+      {/* Main Content */}
       <div className="container">
+        {/* Upload, Scan, Search, Video List */}
         <UploadButton onUpload={handleVideoUpload} />
-        <ScanButton onScan={setScanResults} /> 
-        <SearchBar onSearch={handleSearch} />
+
+        <ScanButton 
+          onScan={setScanResults} 
+          setScanning={setScanning}
+          scanning={scanning}
+        />
+
+        {/* <SearchBar onSearch={handleSearch} /> */}
+
+        {/* Targetas */}
         <div className="row" style={{ display: 'flex' }}>
+
+          {/* Video Results Buttons */}
+          <div
+            style={{
+              border: '1px solid #ccc',
+              padding: '10px',
+              borderRadius: '8px',
+              height: '500px',
+              overflowY: 'auto',
+            }}>
+
+            <h5>Make Your Request</h5>
+            <div className="makeRequest">
+              {videos.length ? (
+                videos.map((videoName, index) => (
+                  <div key={index}>
+                    <h5>Results for {videoName}</h5>
+                    <VideoResults 
+                      videoName={videoName}
+                      setFinalResults={setFinalResults}
+                      scanning={scanning}
+                    />
+                  </div>
+                ))
+              ) : (
+                <p>No results found</p>
+              )}
+            </div>
+          </div>
+
+          
+          {/* Video List: Lado izquierdo con la lista de todos los videos */}
           <div
             ref={containerRef}
             className="video-container"
@@ -204,10 +272,13 @@ const App = () => {
               onMouseDown={handleMouseDown}
             />
           </div>
+
+          {/* Muestra de los resutados */}
           <div
             className="col-md-4"
             style={{ flex: '1 1 auto', overflowY: 'auto' }}
           >
+            {/* IA Result */}
             <div
               style={{
                 border: '1px solid #ccc',
@@ -216,12 +287,13 @@ const App = () => {
                 height: '500px',
                 overflowY: 'auto',
               }}
-            >
-              <h5>IA Results</h5>
+            >            
               <p>
                 {videoData || 'Select a video and scan to view the description'}
               </p>
             </div>
+
+            {/* Search Results */}
             <div
               style={{
                 border: '1px solid #ccc',
@@ -233,8 +305,19 @@ const App = () => {
               }}
             >
               <h5>Search Results</h5>
-              {renderSearchResults()}
+                {/* {renderSearchResults()} */}
+                {finalResults.length ? (
+                  <ul>
+                    {finalResults.map((item, index) => (
+                      <li key={index}>{item.video_name}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p>No results to display</p>
+                )}
             </div>
+
+            {/* Scan Results */}
             <div
               style={{
                 border: '1px solid #ccc',
@@ -248,7 +331,7 @@ const App = () => {
               <h5>Scan Results</h5>
               {scanResults.length ? (
                 scanResults.map((result, index) => (
-                  <p key={index}>{result}</p>
+                  <p key={index}>{result || 'No results found'}</p>
                 ))
               ) : (
                 <p>No scans yet.</p>

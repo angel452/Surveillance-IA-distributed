@@ -18,7 +18,7 @@ const UploadButton = ({ onUpload }) => {
             alert(error.response?.data?.message || 'Error uploading video');
         }
     }
-};
+  };
 
 
   return (

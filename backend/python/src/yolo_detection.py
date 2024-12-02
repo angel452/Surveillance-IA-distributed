@@ -2,9 +2,46 @@ import cv2
 import numpy as np
 from ultralytics import YOLO
 
+
+COLOR_NAMES = [
+    ("red", (255, 0, 0)),
+    ("green", (0, 255, 0)),
+    ("blue", (0, 0, 255)),
+    ("yellow", (255, 255, 0)),
+    ("cyan", (0, 255, 255)),
+    ("magenta", (255, 0, 255)),
+    ("black", (0, 0, 0)),
+    ("white", (255, 255, 255)),
+    ("gray", (128, 128, 128)),
+    ("orange", (255, 165, 0)),
+    ("pink", (255, 192, 203)),
+    ("purple", (128, 0, 128)),
+    ("brown", (165, 42, 42)),
+    ("lime", (191, 255, 0)),
+    ("teal", (0, 128, 128)),
+    ("olive", (128, 128, 0)),
+    ("navy", (0, 0, 128)),
+    ("maroon", (128, 0, 0)),
+    ("gold", (255, 215, 0)),
+    ("silver", (192, 192, 192))
+]
+
+def rgb_to_color_name(rgb):
+    """
+    Encuentra el nombre del color más cercano en la lista de colores.
+    """
+    min_distance = float("inf")
+    closest_color = None
+    for name, color_rgb in COLOR_NAMES:
+        distance = np.linalg.norm(np.array(rgb) - np.array(color_rgb))  # Distancia euclidiana
+        if distance < min_distance:
+            min_distance = distance
+            closest_color = name
+    return closest_color
+
 def get_object_color(frame, mask):
     """
-    Obtiene el color dominante en la región delimitada por la máscara usando la mediana de los píxeles.
+    Obtiene el color dominante en la región delimitada por la máscara como un nombre de color.
     """
     object_region = cv2.bitwise_and(frame, frame, mask=mask)
     object_hsv = cv2.cvtColor(object_region, cv2.COLOR_BGR2HSV)
@@ -26,9 +63,11 @@ def get_object_color(frame, mask):
 
     # Convertir el color dominante a BGR
     dominant_color_bgr = cv2.cvtColor(np.uint8([[[median_hue, median_saturation, median_value]]]), cv2.COLOR_HSV2BGR)[0][0]
-    
-    return tuple(dominant_color_bgr)
 
+    # Convertir a nombre de color
+    dominant_color_name = rgb_to_color_name(dominant_color_bgr)
+
+    return dominant_color_name
 def classify_depth(y, height):
     """
     Clasifica la profundidad de un objeto basado en su posición vertical (y) en la imagen.
