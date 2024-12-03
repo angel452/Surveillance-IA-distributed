@@ -1,13 +1,13 @@
 {
-    "scene": {
-        "environment_type": "plaza",
-        "description": "A small plaza in front of a building labeled 'Student Services'. People are walking along a paved walkway surrounded by some greenery.",
-        "features": {
-            "weather": "sunny",
-            "time_of_day": "day",
-            "terrain": "paved",
-            "crowd_level": "low",
-            "lighting": "natural"
-        }
+  "scene": {
+    "environment_type": "plaza",
+    "description": "The scene shows a plaza area in front of a building labeled 'Student Services'. The area has a paved walkway, some greenery, and people walking.",
+    "features": {
+      "weather": "sunny",
+      "time_of_day": "day",
+      "terrain": "paved",
+      "crowd_level": "low",
+      "lighting": "natural"
     }
+  }
 }
