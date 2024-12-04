@@ -1,0 +1,237 @@
+video_name,sec,object_name,description,color1,color2,size,orientation,type
+VIRAT_S_010005_03_000215_000270,26,person,A person wearing blue upper clothing and running.,unknown,unknown,medium,unknown,unknown
+VIRAT_S_010005_03_000215_000270,26,person,A person with hair covering their face.,unknown,unknown,medium,unknown,unknown
+VIRAT_S_010005_03_000215_000270,26,person,"A person wearing a dark upper garment, potentially walking.",unknown,unknown,medium,unknown,unknown
+VIRAT_S_010004_06_000547_000715,118,person,"An adult male wearing a white shirt and dark pants, standing.",unknown,unknown,large,unknown,unknown
+VIRAT_S_010004_06_000547_000715,118,person,"An adult male wearing a blue shirt and dark pants, standing.",unknown,unknown,medium,unknown,unknown
+VIRAT_S_010004_06_000547_000715,60,person,"An adult male wearing light-colored shirt, standing posture.",unknown,unknown,medium,unknown,unknown
+VIRAT_S_010004_06_000547_000715,60,person,"A person walking with another person, blurred image.",unknown,unknown,unknown,unknown,unknown
+VIRAT_S_010004_06_000547_000715,60,person,"A person from the rear view, walking posture.",unknown,unknown,unknown,unknown,unknown
+VIRAT_S_010003_09_000779_000861,3,person,A person with short hair seen from the back.,unknown,unknown,medium,unknown,unknown
+VIRAT_S_010003_09_000779_000861,3,person,A person with short hair seen in partial profile.,unknown,unknown,medium,unknown,unknown
+VIRAT_S_010201_07_000601_000697,71,person,"An adult, possibly female, wearing bright-colored upper clothing.",unknown,unknown,large,unknown,unknown
+VIRAT_S_010201_07_000601_000697,71,person,"An adult, possibly female, in neutral-colored clothing.",unknown,unknown,medium,unknown,unknown
+VIRAT_S_010201_07_000601_000697,71,person,Person wearing dark-colored clothing.,unknown,unknown,unknown,unknown,unknown
+VIRAT_S_010201_07_000601_000697,71,person,Person in casual attire.,unknown,unknown,medium,unknown,unknown
+VIRAT_S_010201_07_000601_000697,47,person,"Adult female carrying a cup, walking.",unknown,unknown,medium,unknown,unknown
+VIRAT_S_010201_07_000601_000697,47,person,"Adult female, back view.",unknown,unknown,medium,unknown,unknown
+VIRAT_S_010201_07_000601_000697,47,vehicle,"Small white vehicle, frontal view.",white,unknown,small,frontal,unknown
+VIRAT_S_010201_07_000601_000697,81,person,"Female, adult, wearing casual clothing.",unknown,unknown,medium,unknown,unknown
+VIRAT_S_010201_07_000601_000697,81,person,"Female, adult, carrying a bag.",unknown,unknown,medium,unknown,unknown
+VIRAT_S_010201_07_000601_000697,81,person,"Female, adult, wearing a red skirt.",unknown,unknown,medium,unknown,unknown
+VIRAT_S_010201_07_000601_000697,81,person,"Person, unknown, wearing all dark clothing.",unknown,unknown,medium,unknown,unknown
+VIRAT_S_010201_07_000601_000697,81,person,"Female, adult, wearing a dark patterned dress.",unknown,unknown,medium,unknown,unknown
+VIRAT_S_010201_07_000601_000697,81,person,"Male, adult, casual clothing.",unknown,unknown,medium,unknown,unknown
+VIRAT_S_010201_07_000601_000697,81,person,"Female, adult, athletic wear.",unknown,unknown,medium,unknown,unknown
+VIRAT_S_010201_07_000601_000697,7,person,A male adult walking.,unknown,unknown,medium,unknown,unknown
+VIRAT_S_010201_07_000601_000697,7,person,An adult walking.,unknown,unknown,medium,unknown,unknown
+VIRAT_S_010201_07_000601_000697,7,person,An adult in a dark environment.,unknown,unknown,medium,unknown,unknown
+VIRAT_S_010201_07_000601_000697,7,vehicle,"A small, white vehicle.",white,unknown,small,lateral,unknown
+VIRAT_S_010201_07_000601_000697,7,unknown,"Blurry object, possibly another vehicle.",unknown,unknown,unknown,unknown,unknown
+VIRAT_S_010000_00_000000_000165,63,person,A person walking with a backpack.,unknown,unknown,medium,unknown,unknown
+VIRAT_S_010000_00_000000_000165,18,person,A male adult standing.,unknown,unknown,medium,unknown,unknown
+VIRAT_S_010000_00_000000_000165,18,person,A male adult in a dark outfit.,unknown,unknown,medium,unknown,unknown
+VIRAT_S_010000_00_000000_000165,18,person,A male adult standing holding a stick.,unknown,unknown,medium,unknown,unknown
+VIRAT_S_010000_00_000000_000165,18,person,A blurred image of a person in motion.,unknown,unknown,medium,unknown,unknown
+VIRAT_S_010000_00_000000_000165,92,person,An adult female walking,unknown,unknown,medium,unknown,unknown
+VIRAT_S_010000_00_000000_000165,92,person,An adult male walking,unknown,unknown,medium,unknown,unknown
+VIRAT_S_010000_00_000000_000165,92,person,An adult male standing,unknown,unknown,medium,unknown,unknown
+VIRAT_S_010000_00_000000_000165,92,person,An adult male walking,unknown,unknown,medium,unknown,unknown
+VIRAT_S_010000_00_000000_000165,104,person,"A male adult wearing a white shirt with dark text, walking.",unknown,unknown,medium,unknown,unknown
+VIRAT_S_010000_00_000000_000165,104,person,"A male adult wearing a white shirt, walking.",unknown,unknown,medium,unknown,unknown
+VIRAT_S_010000_00_000000_000165,104,unknown,Unclear object due to shadow and low visibility.,unknown,unknown,unknown,unknown,unknown
+VIRAT_S_000200_06_001693_001824,88,unknown,"Blurry object, possibly a bicycle or person on a bike.",black,white,medium,unknown,unknown
+VIRAT_S_000200_06_001693_001824,88,unknown,"Blurry object, possibly a motion blur of a person or vehicle.",black,unknown,medium,unknown,unknown
+VIRAT_S_000200_06_001693_001824,88,unknown,"Blurry object, possibly a small vehicle or moving object.",gree n,unknown,small,unknown,unknown
+VIRAT_S_000200_06_001693_001824,88,unknown,"Blurry object, possibly a small motorized vehicle or scooter.",black,white,small,unknown,unknown
+VIRAT_S_000200_06_001693_001824,88,car,Silver sedan with clear lateral view.,silver,unknown,medium,lateral,Sedan
+VIRAT_S_000200_06_001693_001824,88,car,"Gray sedan with hitch attachment, lateral view.",gray,unknown,medium,lateral,Sedan
+VIRAT_S_000200_06_001693_001824,88,car,Gold minivan with roof rails.,gold,unknown,large,lateral,Minivan
+VIRAT_S_000200_06_001693_001824,88,car,"Silver sedan, slightly blurry with a clear lateral view.",silver,unknown,medium,lateral,Sedan
+VIRAT_S_000200_06_001693_001824,88,car,"Dark blue sedan, slightly blurry.",blue,unknown,medium,lateral,Sedan
+VIRAT_S_000200_06_001693_001824,88,car,"Black SUV with white roof, clear rear view.",black,white,large,rear,SUV
+VIRAT_S_000200_06_001693_001824,88,car,"White compact car partially obstructed, rear view.",white,unknown,medium,rear,Hatchback
+VIRAT_S_000200_06_001693_001824,88,unknown,"Very blurry object, possibly a fast-moving vehicle.",black,unknown,medium,unknown,unknown
+VIRAT_S_010110_06_000953_001011,22,car,A light gray sedan with a sunroof,light gray,unknown,medium,frontal,Sedan
+VIRAT_S_010110_06_000953_001011,22,car,A gold sedan with a rear antenna,gold,unknown,medium,lateral,Sedan
+VIRAT_S_010110_06_000953_001011,22,car,A dark gray hatchback with sporty design,dark gray,unknown,medium,lateral,Hatchback
+VIRAT_S_010110_06_000953_001011,22,car,A shiny red sedan with a closed window,red,unknown,medium,lateral,Sedan
+VIRAT_S_010110_06_000953_001011,22,SUV,A white SUV in a parking lot,white,unknown,large,rear,SUV
+VIRAT_S_010110_06_000953_001011,22,car,A dark blue sedan in a parking spot,dark blue,unknown,medium,rear,Sedan
+VIRAT_S_010110_06_000953_001011,22,car,A silver sedan parked with visible rear lights,silver,unknown,medium,lateral,Sedan
+VIRAT_S_010110_06_000953_001011,22,car,A black car with sunlight reflections,black,unknown,medium,frontal,Sedan
+VIRAT_S_010110_06_000953_001011,22,car,A white car with a side view,white,unknown,medium,lateral,Sedan
+VIRAT_S_010110_06_000953_001011,22,SUV,A black SUV with tinted windows,black,unknown,large,rear,SUV
+VIRAT_S_010110_06_000953_001011,22,car,A silver sedan with angular design,silver,unknown,medium,frontal,Sedan
+VIRAT_S_010110_06_000953_001011,22,car,A maroon car captured in motion with blurring,maroon,unknown,medium,rear,Sedan
+VIRAT_S_010110_06_000953_001011,22,car,A black sedan with an open sunroof,black,unknown,medium,frontal,Sedan
+VIRAT_S_010110_06_000953_001011,22,SUV,A white SUV with a visible license plate,white,unknown,large,rear,SUV
+VIRAT_S_010110_06_000953_001011,22,car,A blue sedan parked between other vehicles,blue,unknown,medium,frontal,Sedan
+VIRAT_S_010110_06_000953_001011,22,car,A black sedan with sun reflected on the windshield,black,unknown,medium,frontal,Sedan
+VIRAT_S_040002_03_001525_001569,17,vehicle,A dark-colored SUV with a frontal view.,black,unknown,medium,frontal,SUV
+VIRAT_S_040002_03_001525_001569,17,vehicle,A silver sedan with a rear view.,silver,unknown,medium,rear,Sedan
+VIRAT_S_040002_03_001525_001569,17,vehicle,A black sedan with a slightly lateral view.,black,unknown,medium,lateral,Sedan
+VIRAT_S_040002_03_001525_001569,17,vehicle,A red convertible with the rear view.,red,unknown,medium,rear,Convertible
+VIRAT_S_050300_09_001789_001858,55,hatchback,Silver hatchback with black accents.,silver,black,medium,lateral,Hatchback
+VIRAT_S_050300_09_001789_001858,55,sedan,"Red sedan, likely a hybrid.",red,unknown,medium,lateral,Sedan
+VIRAT_S_050300_09_001789_001858,55,sedan,White sedan in lateral view.,white,unknown,medium,lateral,Sedan
+VIRAT_S_050300_09_001789_001858,55,sedan,Light brown sedan with a rear view.,light brown,unknown,medium,rear,Sedan
+VIRAT_S_050300_09_001789_001858,55,sedan,Beige sedan in a side view.,beige,unknown,medium,lateral,Sedan
+VIRAT_S_050300_09_001789_001858,55,sedan,Beige sedan with a rear spoiler.,beige,unknown,medium,lateral,Sedan
+VIRAT_S_050300_09_001789_001858,55,sedan,Silver sedan with some motion blur.,silver,unknown,medium,frontal,Sedan
+VIRAT_S_050300_09_001789_001858,55,sedan,"Grey sedan, blurred frontal view.",grey,unknown,medium,frontal,Sedan
+VIRAT_S_050300_09_001789_001858,55,sedan,Silver sedan in a rear view.,silver,unknown,medium,rear,Sedan
+VIRAT_S_050300_09_001789_001858,55,SUV,"White SUV with black patches, unique design.",white,black,large,lateral,SUV
+VIRAT_S_050300_09_001789_001858,55,sedan,"Silver or grey car, blurred and unclear type.",silver,unknown,medium,lateral,Sedan
+VIRAT_S_050300_09_001789_001858,55,SUV,"Black SUV with a roof rack, likely a large model.",black,unknown,large,frontal,SUV
+VIRAT_S_050300_09_001789_001858,55,SUV,"Dark SUV, rear view with lights on.",dark,unknown,large,rear,SUV
+VIRAT_S_050300_09_001789_001858,55,sedan,"Grey sedan, unclear due to blur.",grey,unknown,medium,lateral,Sedan
+VIRAT_S_050300_09_001789_001858,55,unknown,"Blurred white object, likely a car.",white,unknown,medium,unknown,unknown
+VIRAT_S_050300_09_001789_001858,55,vehicle,"Dark vehicle, possibly a van or SUV.",dark,unknown,large,unknown,unknown
+VIRAT_S_050300_09_001789_001858,29,car,Red sedan with visible license plate,red,unknown,medium,lateral,Sedan
+VIRAT_S_050300_09_001789_001858,29,car,Silver hatchback with roof rails,silver,unknown,small,lateral,Hatchback
+VIRAT_S_050300_09_001789_001858,29,car,White sedan with standard design,white,unknown,medium,lateral,Sedan
+VIRAT_S_050300_09_001789_001858,29,car,Silver sedan parked on the road,silver,unknown,medium,lateral,Sedan
+VIRAT_S_050300_09_001789_001858,29,car,Yellow car with rear spoiler,yellow,unknown,small,rear view,Coupe
+VIRAT_S_050300_09_001789_001858,29,car,White and black SUV with roof rack,white,black,large,lateral,SUV
+VIRAT_S_050300_09_001789_001858,29,car,Maroon car in motion,maroon,unknown,medium,frontal,Sedan
+VIRAT_S_050300_09_001789_001858,29,car,Black pickup truck with extended cab,black,unknown,large,lateral,Pickup
+VIRAT_S_050300_09_001789_001858,29,car,White SUV with unique pattern,white,unknown,large,lateral,SUV
+VIRAT_S_050300_09_001789_001858,29,car,Black SUV with shiny finish,black,unknown,large,lateral,SUV
+VIRAT_S_050300_09_001789_001858,29,car,Grey sedan with modern design,grey,unknown,medium,lateral,Sedan
+VIRAT_S_050300_09_001789_001858,29,car,Silver minivan parked on the road,silver,unknown,large,lateral,Minivan
+VIRAT_S_050300_09_001789_001858,44,car,A red sedan with a compact design.,red,unknown,medium,lateral,Sedan
+VIRAT_S_050300_09_001789_001858,44,car,A white sedan with a clean exterior.,white,unknown,medium,lateral,Sedan
+VIRAT_S_050300_09_001789_001858,44,car,A silver hatchback with a sporty look.,silver,unknown,medium,lateral,Hatchback
+VIRAT_S_050300_09_001789_001858,44,car,A beige compact car.,beige,unknown,medium,lateral,Sedan
+VIRAT_S_050300_09_001789_001858,44,car,A white sedan with a spoiler.,white,unknown,medium,rear,Sedan
+VIRAT_S_050300_09_001789_001858,44,car,A gray sedan with a sleek build.,gray,unknown,medium,lateral,Sedan
+VIRAT_S_050300_09_001789_001858,44,car,A white car with a compact design.,white,unknown,medium,lateral,Sedan
+VIRAT_S_050300_09_001789_001858,44,car,A customized SUV with a distinctive pattern.,white,black,large,lateral,SUV
+VIRAT_S_050300_09_001789_001858,44,car,A black SUV with tinted windows.,black,unknown,large,lateral,SUV
+VIRAT_S_050300_09_001789_001858,44,car,A silver sedan speeding along.,silver,unknown,medium,frontal,Sedan
+VIRAT_S_050300_09_001789_001858,44,car,A maroon sedan with visibility issues.,maroon,unknown,medium,frontal,Sedan
+VIRAT_S_050300_09_001789_001858,44,car,A white vehicle in a parking area.,white,unknown,medium,rear,SUV
+VIRAT_S_050300_09_001789_001858,44,car,A white pickup truck going forward.,white,unknown,large,frontal,Pickup
+VIRAT_S_050300_09_001789_001858,44,car,A light-colored pickup truck in motion.,light gray,unknown,large,lateral,Pickup
+VIRAT_S_050300_09_001789_001858,44,car,A blurred white vehicle.,white,unknown,unknown,frontal,unknown
+VIRAT_S_050300_09_001789_001858,44,car,A blurred vehicle with reflective parts.,silver,unknown,unknown,frontal,unknown
+VIRAT_S_050201_02_000395_000483,45,car,Silver sedan with a white roof.,silver,white,medium,lateral,Sedan
+VIRAT_S_050201_02_000395_000483,45,car,Black sedan with tinted windows.,black,unknown,medium,lateral,Sedan
+VIRAT_S_050201_02_000395_000483,45,car,Black sedan with slight frontal view.,black,unknown,medium,frontal,Sedan
+VIRAT_S_050201_02_000395_000483,45,SUV,Dark blue SUV viewed from above.,blue,unknown,large,lateral,SUV
+VIRAT_S_050201_02_000395_000483,45,car,Silver sedan with visible roof.,silver,white,medium,lateral,Sedan
+VIRAT_S_050201_02_000395_000483,45,SUV,Silver SUV with lateral view.,silver,unknown,large,lateral,SUV
+VIRAT_S_050201_02_000395_000483,45,SUV,"Dark SUV, parked closely with others.",black,unknown,large,lateral,SUV
+VIRAT_S_050201_02_000395_000483,45,car,Silver sedan with lateral view.,silver,unknown,medium,lateral,Sedan
+VIRAT_S_050201_02_000395_000483,45,SUV,White SUV with prominent roof.,white,unknown,large,lateral,SUV
+VIRAT_S_050201_02_000395_000483,45,car,Silver sedan with slight frontal view.,silver,unknown,medium,frontal,Sedan
+VIRAT_S_050201_02_000395_000483,45,SUV,Black SUV with visible roof.,black,unknown,large,lateral,SUV
+VIRAT_S_050201_02_000395_000483,45,car,Silver sedan with rear view.,silver,unknown,medium,rear,Sedan
+VIRAT_S_050201_02_000395_000483,45,SUV,Black SUV with visible roof.,black,unknown,large,lateral,SUV
+VIRAT_S_050201_02_000395_000483,45,car,Silver sedan with lateral view.,silver,unknown,medium,lateral,Sedan
+VIRAT_S_050201_02_000395_000483,45,SUV,Blue SUV with rear view.,blue,unknown,large,rear,SUV
+VIRAT_S_050201_02_000395_000483,45,car,Silver sedan with lateral view.,silver,unknown,medium,lateral,Sedan
+VIRAT_S_050201_02_000395_000483,45,van,White van with side decals.,white,unknown,large,lateral,Minivan
+VIRAT_S_050201_02_000395_000483,45,pickup,White pickup truck with open bed.,white,unknown,large,lateral,Pickup
+VIRAT_S_050201_02_000395_000483,45,car,Silver car with visible roof.,silver,unknown,medium,lateral,Sedan
+VIRAT_S_010110_03_000712_000739,10,car,Silver sedan with a shiny roof.,silver,unknown,medium,lateral,sedan
+VIRAT_S_010110_03_000712_000739,10,car,Light gold sedan parked at an angle.,gold,unknown,medium,lateral,sedan
+VIRAT_S_010110_03_000712_000739,10,car,Silver sports car with a sleek design.,silver,unknown,medium,lateral,sedan
+VIRAT_S_010110_03_000712_000739,10,car,Dark green sedan with a shiny exterior.,green,unknown,medium,frontal,sedan
+VIRAT_S_010110_03_000712_000739,10,car,Dark blue sedan parked with rear facing.,blue,unknown,medium,rear view,sedan
+VIRAT_S_010110_03_000712_000739,10,car,Red sedan with a shiny body.,red,unknown,medium,lateral,sedan
+VIRAT_S_010110_03_000712_000739,10,car,White SUV parked on the road.,white,unknown,large,lateral,SUV
+VIRAT_S_010110_03_000712_000739,10,car,Black SUV parked tightly alongside another vehicle.,black,unknown,large,lateral,SUV
+VIRAT_S_010110_03_000712_000739,10,car,White sedan with a smooth design.,white,unknown,medium,frontal,sedan
+VIRAT_S_010110_03_000712_000739,10,car,Silver sedan driving on the road.,silver,unknown,medium,lateral,sedan
+VIRAT_S_010110_03_000712_000739,10,car,Black sedan caught in motion.,black,unknown,medium,lateral,sedan
+VIRAT_S_010110_03_000712_000739,10,car,Silver sedan parked in a lot.,silver,unknown,medium,lateral,sedan
+VIRAT_S_040005_08_001225_001276,40,car,A blue car with a frontal orientation.,blue,unknown,medium,frontal,Hatchback
+VIRAT_S_040005_08_001225_001276,40,car,A silver car viewed from the rear.,silver,unknown,medium,rear,Sedan
+VIRAT_S_040005_08_001225_001276,40,car,A red car seen from a frontal angle.,red,unknown,medium,frontal,Sedan
+VIRAT_S_040005_08_001225_001276,40,car,A dark green car in lateral orientation.,dark green,unknown,medium,lateral,Sedan
+VIRAT_S_050000_10_001462_001491,23,person,A young female adult wearing an orange top and carrying a backpack.,unknown,unknown,medium,unknown,unknown
+VIRAT_S_050000_10_001462_001491,23,vehicle,White SUV with a spare tire mounted on the back.,white,unknown,large,rear view,SUV
+VIRAT_S_050000_10_001462_001491,23,vehicle,Black pickup truck with a green logo on the side.,black,green,large,lateral view,Pickup
+VIRAT_S_050000_10_001462_001491,23,vehicle,Gray car parked beside another vehicle.,gray,unknown,medium,lateral view,Sedan
+VIRAT_S_050000_10_001462_001491,23,vehicle,Red pickup truck.,red,unknown,large,frontal view,Pickup
+VIRAT_S_050000_10_001462_001491,23,vehicle,Silver minivan with rear view.,silver,unknown,large,rear view,Minivan
+VIRAT_S_050000_10_001462_001491,23,vehicle,Flatbed trailer with a construction vehicle.,unknown,unknown,large,lateral view,unknown
+VIRAT_S_050000_10_001462_001491,23,vehicle,White car partially obscured by trees.,white,unknown,medium,frontal view,unknown
+VIRAT_S_050000_10_001462_001491,23,vehicle,Black pickup truck with tinted windows.,black,unknown,large,rear view,Pickup
+VIRAT_S_050000_10_001462_001491,23,vehicle,Motorcycle with visible wheels and seats.,unknown,unknown,small,lateral view,Motorcycle
+VIRAT_S_040000_05_000668_000703,11,car,A dark-colored sedan.,dark blue,unknown,medium,rear view,Sedan
+VIRAT_S_040000_05_000668_000703,11,car,A blurred silver or grey car.,silver,unknown,medium,unknown,unknown
+VIRAT_S_040000_05_000668_000703,11,truck,A blue pickup truck.,blue,black,large,lateral view,Pickup
+VIRAT_S_040000_05_000668_000703,11,car,A black sedan.,black,unknown,medium,frontal view,Sedan
+VIRAT_S_040000_05_000668_000703,11,car,A blue SUV with a roof rack.,blue,silver,large,lateral view,SUV
+VIRAT_S_040000_05_000668_000703,11,car,A red convertible.,red,unknown,medium,rear view,Convertible
+VIRAT_S_010206_04_000720_000767,19,person,A person wearing a dark jacket and light shorts.,unknown,unknown,medium,unknown,unknown
+VIRAT_S_010206_04_000720_000767,19,person,A person in a dark top and khaki pants.,unknown,unknown,medium,unknown,unknown
+VIRAT_S_010205_06_000830_000904,72,person,A person walking away.,unknown,unknown,medium,unknown,unknown
+VIRAT_S_010205_06_000830_000904,72,person,A person carrying a bag.,unknown,unknown,medium,unknown,unknown
+VIRAT_S_010205_06_000830_000904,72,person,A person in a white shirt.,unknown,unknown,medium,unknown,unknown
+VIRAT_S_010205_06_000830_000904,72,person,A person walking.,unknown,unknown,unknown,unknown,unknown
+VIRAT_S_010205_06_000830_000904,72,person,A blurry person image.,unknown,unknown,unknown,unknown,unknown
+VIRAT_S_010205_06_000830_000904,72,vehicle,A white SUV.,white,unknown,large,frontal,SUV
+VIRAT_S_010205_06_000830_000904,8,person,An adult male walking.,unknown,unknown,large,unknown,unknown
+VIRAT_S_010205_06_000830_000904,8,person,An adult female walking.,unknown,unknown,medium,unknown,unknown
+VIRAT_S_010205_06_000830_000904,8,person,An adult male riding a bicycle.,unknown,unknown,large,unknown,unknown
+VIRAT_S_010205_06_000830_000904,8,vehicle,A silver pickup truck.,silver,unknown,large,frontal,Pickup
+VIRAT_S_010005_01_000085_000164,9,person,"Silhouette of a person, details unclear.",unknown,unknown,unknown,unknown,unknown
+VIRAT_S_010005_01_000085_000164,9,person,"Silhouette of a person, details unclear.",unknown,unknown,unknown,unknown,unknown
+VIRAT_S_010106_01_000493_000526,13,person,Blurry image of a person running,unknown,unknown,medium,unknown,unknown
+VIRAT_S_010106_01_000493_000526,13,car,Black sedan with a shiny finish,black,unknown,medium,lateral,sedan
+VIRAT_S_010106_01_000493_000526,13,car,White sedan in motion,white,unknown,medium,frontal,sedan
+VIRAT_S_010106_01_000493_000526,13,van,Black minivan with tinted windows,black,unknown,large,lateral,minivan
+VIRAT_S_010106_01_000493_000526,13,car,Silver sedan parked,silver,unknown,medium,lateral,sedan
+VIRAT_S_010106_01_000493_000526,13,car,Gray sedan with a sleek design,gray,unknown,medium,lateral,sedan
+VIRAT_S_010106_01_000493_000526,13,car,Silver sedan driving,silver,unknown,medium,lateral,sedan
+VIRAT_S_010106_01_000493_000526,13,car,Blue hatchback with a compact design,blue,unknown,small,lateral,hatchback
+VIRAT_S_010106_01_000493_000526,13,car,Silver sedan driving with smooth curves,silver,unknown,medium,lateral,sedan
+VIRAT_S_010106_01_000493_000526,13,car,Black sedan with a shiny finish,black,unknown,medium,lateral,sedan
+VIRAT_S_010106_01_000493_000526,13,car,Silver sedan in motion,silver,unknown,medium,lateral,sedan
+VIRAT_S_010106_01_000493_000526,13,car,Black sedan with reflective surface,black,unknown,medium,lateral,sedan
+VIRAT_S_010106_01_000493_000526,13,car,White sedan with strong highlights,white,unknown,medium,frontal,sedan
+VIRAT_S_050301_00_000000_000036,6,person,"A person in motion, blurred due to speed",unknown,unknown,medium,unknown,unknown
+VIRAT_S_050301_00_000000_000036,6,car,"Silver sedan, clean appearance",silver,unknown,medium,lateral,Sedan
+VIRAT_S_050301_00_000000_000036,6,car,"Silver hatchback, compact",silver,unknown,small,lateral,Hatchback
+VIRAT_S_050301_00_000000_000036,6,car,"Beige sedan, slightly larger size",beige,unknown,medium,lateral,Sedan
+VIRAT_S_050301_00_000000_000036,6,car,White sedan with a darker trim,white,dark,medium,lateral,Sedan
+VIRAT_S_050301_00_000000_000036,6,car,White SUV with distinctive black patterns,white,black,large,lateral,SUV
+VIRAT_S_050301_00_000000_000036,6,car,"Blurred white car, details unclear",white,unknown,unknown,unknown,unknown
+VIRAT_S_050301_00_000000_000036,6,car,White sedan passing by a pole,white,unknown,medium,lateral,Sedan
+VIRAT_S_050301_00_000000_000036,6,car,Black SUV with a modern look,black,unknown,large,lateral,SUV
+VIRAT_S_050301_00_000000_000036,6,car,Dark-colored sedan with tinted windows,dark,unknown,medium,lateral,Sedan
+VIRAT_S_050301_00_000000_000036,6,car,"White SUV, slightly blurred",white,unknown,large,lateral,SUV
+VIRAT_S_050301_00_000000_000036,6,car,Silver sedan viewed from the front/side,silver,unknown,medium,frontal,Sedan
+VIRAT_S_050301_00_000000_000036,6,car,Gray sedan with noticeable wear,gray,unknown,medium,lateral,Sedan
+VIRAT_S_050301_00_000000_000036,6,car,"White SUV parked, slight blur",white,unknown,large,rear,SUV
+VIRAT_S_050301_00_000000_000036,26,car,"Silver sedan, side view",silver,unknown,medium,lateral,Sedan
+VIRAT_S_050301_00_000000_000036,26,car,"Silver hatchback, side view",silver,unknown,medium,lateral,Hatchback
+VIRAT_S_050301_00_000000_000036,26,car,"Beige hatchback, side view",beige,unknown,medium,lateral,Hatchback
+VIRAT_S_050301_00_000000_000036,26,car,"White sedan, side view",white,unknown,medium,lateral,Sedan
+VIRAT_S_050301_00_000000_000036,26,car,"Blue sedan, side view",blue,unknown,medium,lateral,Sedan
+VIRAT_S_050301_00_000000_000036,26,car,"Black SUV, side view",black,unknown,large,lateral,SUV
+VIRAT_S_050301_00_000000_000036,26,unknown,"Blurry vehicle, side view",unknown,unknown,unknown,lateral,unknown
+VIRAT_S_050301_00_000000_000036,26,car,"Camouflage SUV, side view",white,black,large,lateral,SUV
+VIRAT_S_050301_00_000000_000036,26,car,"Black sedan, side view",black,unknown,medium,lateral,Sedan
+VIRAT_S_050301_00_000000_000036,26,car,"Silver sedan, side view",silver,unknown,medium,lateral,Sedan
+VIRAT_S_050301_00_000000_000036,26,car,"Beige sedan, rear view",beige,unknown,medium,rear,Sedan
+VIRAT_S_050301_00_000000_000036,26,car,"Silver hatchback, rear view",silver,unknown,medium,rear,Hatchback
+VIRAT_S_050301_00_000000_000036,26,car,"Silver SUV, rear view",silver,unknown,large,rear,SUV
+VIRAT_S_050301_00_000000_000036,26,car,"Silver sedan, rear view",silver,unknown,medium,rear,Sedan
+VIRAT_S_050301_00_000000_000036,26,car,"White sedan, rear view",white,unknown,medium,rear,Sedan
+VIRAT_S_000207_04_000902_000934,15,person,Person in motion,unknown,unknown,medium,unknown,unknown
+VIRAT_S_000207_04_000902_000934,15,car,Black sedan,black,unknown,medium,frontal,Sedan
+VIRAT_S_000207_04_000902_000934,15,car,Maroon sedan,maroon,unknown,medium,lateral,Sedan
+VIRAT_S_000207_04_000902_000934,15,car,Dark sedan,dark,unknown,medium,rear view,Sedan
+VIRAT_S_000207_04_000902_000934,15,car,Silver sedan,silver,unknown,medium,lateral,Sedan
+VIRAT_S_000207_04_000902_000934,15,car,White hatchback,white,unknown,medium,lateral,Hatchback
+VIRAT_S_000207_04_000902_000934,15,car,Black station wagon,black,unknown,medium,lateral,Station Wagon
+VIRAT_S_000207_04_000902_000934,15,car,Beige SUV,beige,unknown,large,rear view,SUV
+VIRAT_S_000207_04_000902_000934,15,car,Blue sedan,blue,unknown,medium,lateral,Sedan
+VIRAT_S_000207_04_000902_000934,15,car,Gray station wagon,gray,unknown,medium,lateral,Station Wagon
+VIRAT_S_000207_04_000902_000934,15,car,White sedan,white,unknown,medium,frontal,Sedan
+VIRAT_S_000207_04_000902_000934,15,unknown,Blurry object,unknown,unknown,unknown,unknown,unknown
