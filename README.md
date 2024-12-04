@@ -6,14 +6,13 @@ Este proyecto integra inteligencia artificial con almacenamiento distribuido par
 
 ## Tabla de Contenidos
 
-
-1. Características Principales
-2. Requisitos Previos
-3. Estructura del Proyecto
-4. Guía de Instalación
-5. Uso
-6. Arquitectura
-7. Contribuidores
+1. [Características Principales](#características-principales)
+2. [Requisitos Previos](#requisitos-previos)
+3. [Estructura del Proyecto](#estructura-del-proyecto)
+4. [Guía de Instalación](#guía-de-instalación)
+5. [Uso](#uso)
+6. [Arquitectura](#arquitectura)
+7. [Contribuidores](#contribuidores)
 
 
 ## Características Principales
@@ -218,7 +217,7 @@ Para iniciar el servidor de la API, usa el script `start.sh` dentro de la carpet
 Esto levantará la plataforma web con su interfaz interactiva para cargar videos y analizar los datos de videovigilancia.
 
 
-## 5. Uso
+## Uso
 Este sistema permite a los usuarios cargar videos de vigilancia, procesarlos mediante un modelo de Inteligencia Artificial para la detección de objetos y características, y luego realizar consultas sobre estos objetos para búsquedas en una base de datos distribuida. A continuación se describe el flujo de uso del sistema a través de la plataforma web.
 
 ### 1. Subir un Video
@@ -306,7 +305,7 @@ Una vez realizada la consulta, los resultados se mostrarán en la sección "Sear
 ![1_1_SubirVideo](Images/6_1_ResultadConsulta.png)
 
 
-## 6. Arquitectura
+## Arquitectura
 La arquitectura que utlizamos consta de lo siguiente: 
 1. Primero, los videos que son ingresados por el frontend en el navegador son procesados por yolo y un LLM para la ubicacion y extrancion de los tags mas relevantes, luego se puede realizar 3 tipos de consultas, que son eviados al nodo maestro del cluster en AWS, a travez de una API personalizada para esta tarea. Estas consultas son realizadas con Hive y la respuesta es enviada de vuelta al frontend, usando el mismo canal.
 ![1_1_SubirVideo](Images/miro1.png)
@@ -314,9 +313,8 @@ La arquitectura que utlizamos consta de lo siguiente:
 ![1_1_SubirVideo](Images/miro2.png)
 3. Podemos realizar 3 tipos de consultas, luego del analisis del video. La primera, devuelve los videos que poseen el mismo enviroment. En la segunda, devuelve los videos con el mismo objeto y caracteristicas, junto con el segundo preciso de la identificacion. La tercera consulta devuelve en orden de relevacia los videos donde aparece el objeto, junto con el segundo y las veces de aparicion. Mientras mas veces se identifica el objeto mas arriba en la lista estara.
 ![1_1_SubirVideo](Images/miro3.png)
-## 7. Contribuidores
 
-*Los malditos de la San Pablo*
+## Contribuidores
 - [Brigham-CG](https://github.com/Brigham-CG)
 - [angel452](https://github.com/angel452)
 - [Gabriel-Manchego](https://github.com/Gabriel-Manchego)
