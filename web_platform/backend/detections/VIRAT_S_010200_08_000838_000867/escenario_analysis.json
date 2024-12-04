@@ -1,7 +1,7 @@
 {
     "scene": {
-        "environment_type": "plaza",
-        "description": "A small plaza in front of a building labeled 'Student Services'. People are walking along a paved walkway surrounded by some greenery.",
+        "environment_type": "campus",
+        "description": "An outdoor area with buildings surrounded by greenery and pathways. People are walking around.",
         "features": {
             "weather": "sunny",
             "time_of_day": "day",

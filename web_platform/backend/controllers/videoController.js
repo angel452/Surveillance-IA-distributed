@@ -121,7 +121,7 @@ exports.make_query = (req, res) => {
     console.log('Query data:', queryData);
 
     // Recuperar la URL de la API desde la variable de entorno
-    const apiUrl = 'http://ec2-3-90-213-57.compute-1.amazonaws.com:1234/receive_characteristics';
+    const apiUrl = 'http://ec2-18-208-129-187.compute-1.amazonaws.com:1234/receive_characteristics';
 
     if (!apiUrl) {
         return res.status(500).json({ error: 'API URL is not configured in environment variables' });
@@ -182,19 +182,27 @@ exports.getScanResults = (req, res) => {
 }
 
 // 5. Metodo para obtener la lista de videos
-exports.getVideosList = (req, res) => {
+exports.getVideosList = async (req, res) => {
+
     const detectionFolder = path.join(__dirname, '..', 'detections');
-    fs.readdir(detectionFolder, (err, files) => {
-        if (err) {
-            return res.status(500).json({ message: "Error reading video directories" });
-        }
-        // Filtra solo las carpetas que contienen los resultados de los videos (puedes ajustar esto según tu estructura)
-        const videoNames = files.filter(file => fs.statSync(path.join(detectionFolder, file)).isDirectory());
+
+    try{
+        // Lectura de la carpeta de detecciones
+        const files = await fs.promises.readdir(detectionFolder);
+
+        // Filtrar por carpetas que contienen los resultados de los videos
+        const videoNames = files.filter(file => {
+            const fullPath = path.join(detectionFolder, file);
+            return fs.statSync(fullPath).isDirectory();
+        });
 
         if(videoNames.length === 0) {
-            return res.status(404).json({ message: "No videos found" });
+            return res.json({ videos: [] }); // Respuesta vacía si no hay videos
         }
 
-        res.json({ videos: videoNames });
-    });
+        return res.json({ videos: videoNames });        
+    } catch (error) {
+        console.error('Error al leer la carpeta de detecciones:', error);
+        res.status(500).json({ error: 'Error al leer la carpeta de detecciones' });
+    }
 };
