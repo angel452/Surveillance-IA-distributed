@@ -99,9 +99,10 @@ Contiene la implementación de la plataforma web.
 ## Guía de Instalación
 
 ### 1. Clonar el repositorio
-    ```bash
+
+  ``` bash
     git clone https://github.com/angel452/Surveillance-IA-distributed.git
-    ```
+  ```
 
 ## 2. Crear el clúster en AWS
 
@@ -111,10 +112,10 @@ Para comenzar, crea el clúster de Amazon EMR. Asegúrate de que el clúster est
 
 Usa el siguiente comando scp para transferir las carpetas API_cluster y data_cluster al clúster de EC2 en el nodo maestro:
 
-    ``` bash
+  ``` bash
     scp -i "<ruta_a_tu_llave.pem>" -r API_cluster <usuario>@<dirección_ec2>:/<ruta_destino>
     scp -i "<ruta_a_tu_llave.pem>" -r data_cluster <usuario>@<dirección_ec2>:/<ruta_destino>
-    ```
+  ```
 
 ### 4. Configurar el entorno
 Una vez que hayas subido los archivos, conéctate a tu instancia EC2 y asegúrate de que todas las dependencias necesarias estén instaladas:
@@ -162,4 +163,33 @@ Para iniciar el servidor de la API, usa el script `start.sh` dentro de la carpet
     ``` bash
     ./start.sh
     ```
+### 7. Levantar la Plataforma Web
 
+1. Primero, instala las dependencias necesarias para Python, el backend y el frontend:
+
+   - Navega a la carpeta `web_platform/backend/python` y ejecuta:
+     ```bash
+     cd web_platform/backend/python
+     pip install -r requirements.txt
+     ```
+
+   - Luego, instala las dependencias de Node.js en el backend:
+     ```bash
+     cd ../
+     npm install
+     ```
+
+   - Finalmente, instala las dependencias del frontend:
+     ```bash
+     cd ../../
+     npm install
+     ```
+
+2. Para iniciar el servidor del backend, ejecuta:
+   ```bash
+   npm run server
+   ```
+3. Para iniciar el frontend, ejecuta:
+   ```bash
+    npm run start
+   ```
