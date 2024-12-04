@@ -56,15 +56,15 @@ STORED AS TEXTFILE;
 -- Cargar datos desde archivos locales
 -- Asegúrate de que los archivos estén disponibles en las rutas especificadas
 
-LOAD DATA LOCAL INPATH '/home/ec2-user/data_sd/objects_data.csv'
+LOAD DATA LOCAL INPATH '/home/ec2-user/data_cluster/data_sd/objects_data.csv'
 INTO TABLE objects;
 
 -- Cargar datos en la tabla 'scenarios'
-LOAD DATA LOCAL INPATH '/home/ec2-user/data_sd/scenarios_data.csv'
+LOAD DATA LOCAL INPATH '/home/ec2-user/data_cluster/data_sd/scenarios_data.csv'
 INTO TABLE scenarios;
 
 -- Cargar datos en la tabla 'features'
-LOAD DATA LOCAL INPATH '/home/ec2-user/data_sd/features_data.csv'
+LOAD DATA LOCAL INPATH '/home/ec2-user/data_cluster/data_sd/features_data.csv'
 INTO TABLE features;
 
 -- Verificar los datos cargados

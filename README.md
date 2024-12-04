@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# Proyecto de Videovigilancia con Almacenamiento Distribuido
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Este proyecto integra un sistema de videovigilancia avanzado con una arquitectura de almacenamiento distribuido basada en Hive en clúster. Incluye una plataforma web, una API REST, y el sistema de almacenamiento para gestionar y analizar datos de videos capturados. El objetivo principal es proporcionar una solución escalable y eficiente para la administración y análisis de datos de videovigilancia.
 
-In the project directory, you can run:
+## Tabla de Contenidos
 
-### `npm start`
+1. Descripción General
+2. Características Principales
+3. Requisitos Previos
+4. Estructura del Proyecto
+5. Guía de Instalación
+6. Configuración
+7. Uso\n8. Arquitectura
+9. Contribuciones
+10. Licencia
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Descripción General
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Este sistema se diseñó para gestionar grandes volúmenes de datos de videovigilancia, incluyendo:
+- Procesamiento de detección de objetos y eventos en videos.
+- Almacenamiento distribuido para garantizar la escalabilidad y redundancia.
+- Una plataforma web para visualizar, buscar y analizar datos.
+- Una API REST que actúa como puente entre la plataforma y el almacenamiento distribuido.
 
-### `npm test`
+## Características Principales\n
+- Detección en tiempo real: Identificación de objetos y eventos relevantes en los videos.
+- Almacenamiento escalable: Uso de Hive sobre HDFS en un clúster para manejar datos estructurados.
+- Plataforma web interactiva: Visualización de datos de videovigilancia y análisis.
+- Integración API: Gestión de datos a través de una API RESTful.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Requisitos Previos
 
-### `npm run build`
+Antes de comenzar, asegúrate de tener instalados los siguientes componentes:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Backend
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Python 3.8 o superior
+- OpenAI para procesamiento de lenguaje natural (si aplica)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- PyHive para conexión a Hive
+- Apache Hive (en clúster)\n- Hadoop (HDFS configurado)
 
-### `npm run eject`
+### Frontend\n- Node.js (16.x o superior)
+- Framework React (o similar, según implementación)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Infraestructura\n- Servidores con configuración para un clúster Hadoop.
+- Navegador web actualizado para la plataforma.\n\n## Estructura del Proyecto
+📁 proyecto-videovigilancia
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+│ 
+| ├── 📁 api/ # API REST para integración de datos
+│ ├── app.py # Punto de entrada de la API
+│ ├── routes/ # Rutas de la API
+│ ├── models/ # Modelos de datos
+│ └── requirements.txt # Dependencias para la API
+│ 
+├── 📁 frontend/ # Plataforma web
+│ ├── public/ # Archivos estáticos\n│ ├── src/ # Código fuente del frontend (React o similar)\n│ └── package.json # Configuración y dependencias del frontend\n│ \n├── 📁 hive-scripts/ # Scripts para gestión de tablas y datos en Hive\n│ ├── create_tables.hql # Definición de tablas\n│ ├── load_data.hql # Scripts para cargar datos\n│ └── queries.hql # Consultas predefinidas\n│ \n├── 📁 docs/ # Documentación adicional\n│ \n├── .env # Variables de entorno (API keys, rutas, etc.)\n├── .gitignore # Archivos a ignorar por Git\n├── README.md # Documentación principal\n└── setup.sh # Script para configurar el entorno\n\n## Guía de Instalación
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 1. Clonar el repositorio
+git clone https://github.com/usuario proyecto-videovigilancia.git\ncd proyecto-videovigilancia
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 2. Configurar el backend
+1. Navega a la carpeta api/:
+ cd api
+2. Instala las dependencias:
+  pip install -r requirements.txt
+3. Configura las variables de entorno en el archivo .env:\n - Crea un archivo .env en la carpeta api/ con el siguiente contenido:\n HIVE_HOST=localhost\n HIVE_PORT=10000\n HIVE_USERNAME=hive\n HIVE_DATABASE=default\n OPENAI_API_KEY=tu-clave-aqui\n - Reemplaza tu-clave-aqui con tu clave API de OpenAI.\n\n### 3. Configurar el frontend\n1. Navega a la carpeta frontend/:\n cd ../frontend\n2. Instala las dependencias:\n npm install\n\n### 4. Configurar Hive\n1. Configura el clúster de Hadoop y Hive.\n2. Ejecuta los scripts en hive-scripts/ para crear tablas y cargar datos:\n hive -f hive-scripts/create_tables.hql\n hive -f hive-scripts/load_data.hql\n\n### 5. Iniciar el sistema\n1. Inicia el backend:\n python app.py\n2. Inicia el frontend:\n npm start\n\n## Configuración\n\n- API REST: Configura la clave API y el host en .env.\n- Hive: Modifica los scripts de tablas y carga de datos según tus necesidades.\n\n## Uso\n\n1. Accede a la plataforma web en http://localhost:3000.\n2. Utiliza la API para realizar consultas programáticas:\n - GET /api/videos\n - POST /api/analyze\n3. Analiza los datos almacenados en Hive a través de la plataforma o utilizando HiveQL.\n\n## Arquitectura\n\nEl sistema está compuesto por:\n- Frontend (React): Para la interacción del usuario.\n- Backend (Python/Flask): Gestiona las solicitudes y la lógica empresarial.\n- Hive (HDFS): Almacenamiento distribuido para grandes volúmenes de datos.\n- Clúster Hadoop: Para garantizar escalabilidad y procesamiento distribuido.\n\n## Contribuciones\n\n1. Realiza un fork del repositorio.\n2. Crea una rama nueva:\n git checkout -b mi-feature\n3. Realiza los cambios y haz un commit:\n git commit -m "Descripción de los cambios"\n4. Envía tus cambios:\n git push origin mi-feature\n\n## Licencia\n\nEste proyecto está licenciado bajo la licencia MIT. Consulta el archivo LICENSE para más detalles

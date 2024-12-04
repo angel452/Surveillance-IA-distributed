@@ -1,0 +1,3 @@
+pyhive
+thrift
+thrift_sasl
