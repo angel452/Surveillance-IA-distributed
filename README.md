@@ -1,69 +1,165 @@
-# Proyecto de Videovigilancia con Almacenamiento Distribuido
+# Reconocimiento de objetos en videovigilancia y almacenamiento en sistema distribuido
 
-
-Este proyecto integra un sistema de videovigilancia avanzado con una arquitectura de almacenamiento distribuido basada en Hive en clúster. Incluye una plataforma web, una API REST, y el sistema de almacenamiento para gestionar y analizar datos de videos capturados. El objetivo principal es proporcionar una solución escalable y eficiente para la administración y análisis de datos de videovigilancia.
+Este proyecto integra inteligencia artificial con almacenamiento distribuido para videovigilancia. Utiliza YOLO para detección de objetos y algoritmos para extraer características. Los datos se gestionan en un clúster con Hive sobre HDFS, permitiendo búsquedas eficientes de objetos similares. Incluye una plataforma web y una API REST para análisis y visualización.
 
 ## Tabla de Contenidos
 
-1. Descripción General
-2. Características Principales
-3. Requisitos Previos
-4. Estructura del Proyecto
-5. Guía de Instalación
-6. Configuración
-7. Uso\n8. Arquitectura
-9. Contribuciones
-10. Licencia
 
-## Descripción General
+1. Características Principales
+2. Requisitos Previos
+3. Estructura del Proyecto
+4. Guía de Instalación
+5. Configuración
+6. Uso
+7. Arquitectura
+8. Contribuciones
 
-Este sistema se diseñó para gestionar grandes volúmenes de datos de videovigilancia, incluyendo:
-- Procesamiento de detección de objetos y eventos en videos.
-- Almacenamiento distribuido para garantizar la escalabilidad y redundancia.
-- Una plataforma web para visualizar, buscar y analizar datos.
-- Una API REST que actúa como puente entre la plataforma y el almacenamiento distribuido.
 
-## Características Principales\n
-- Detección en tiempo real: Identificación de objetos y eventos relevantes en los videos.
-- Almacenamiento escalable: Uso de Hive sobre HDFS en un clúster para manejar datos estructurados.
-- Plataforma web interactiva: Visualización de datos de videovigilancia y análisis.
-- Integración API: Gestión de datos a través de una API RESTful.
+## Características Principales
+- Detección precisa: Identificación de objetos y extracción de características clave en los videos mediante modelos de IA como YOLO.
+- Almacenamiento escalable: Gestión eficiente de grandes volúmenes de datos estructurados utilizando Hive sobre HDFS en un clúster distribuido.
+- Plataforma web intuitiva: Interfaz para cargar videos, analizar objetos detectados y gestionar resultados de análisis.
+- Integración API: Acceso programático para consultar y gestionar datos a través de una API RESTful en el cluster.
 
 ## Requisitos Previos
 
-Antes de comenzar, asegúrate de tener instalados los siguientes componentes:
+Antes de comenzar, asegúrate de tener instalados los siguientes componentes necesarios para cada parte del sistema:
+
+### API (Python)
+La API utiliza Python y requiere las siguientes bibliotecas y herramientas:  
+- FastAPI  
+- Uvicorn  
+- Celery  
+- Redis  
+- PyHive  
+- Thrift  
+- Thrift-SASL  
+
+### Inteligencia Artificial (Procesamiento de Videos)
+El análisis y detección de objetos requiere las siguientes bibliotecas:  
+- OpenAI (para tareas de procesamiento avanzado)  
+- dotenv  
+- OpenCV  
+- NumPy  
+- Ultralytics YOLO  
 
 ### Backend
+El backend requiere:  
+- Node.js  
+- npm  
 
-- Python 3.8 o superior
-- OpenAI para procesamiento de lenguaje natural (si aplica)
+### Frontend
+El frontend está desarrollado en React y requiere un entorno compatible con Node.js y npm.
 
-- PyHive para conexión a Hive
-- Apache Hive (en clúster)\n- Hadoop (HDFS configurado)
+### Infraestructura
+El sistema se monta en un clúster **Amazon EMR** para proporcionar escalabilidad y procesamiento distribuido. Asegúrate de configurar un clúster adecuado con Hive y HDFS.  
 
-### Frontend\n- Node.js (16.x o superior)
-- Framework React (o similar, según implementación)
 
-### Infraestructura\n- Servidores con configuración para un clúster Hadoop.
-- Navegador web actualizado para la plataforma.\n\n## Estructura del Proyecto
-📁 proyecto-videovigilancia
+## Estructura del Proyecto
 
-│ 
-| ├── 📁 api/ # API REST para integración de datos
-│ ├── app.py # Punto de entrada de la API
-│ ├── routes/ # Rutas de la API
-│ ├── models/ # Modelos de datos
-│ └── requirements.txt # Dependencias para la API
-│ 
-├── 📁 frontend/ # Plataforma web
-│ ├── public/ # Archivos estáticos\n│ ├── src/ # Código fuente del frontend (React o similar)\n│ └── package.json # Configuración y dependencias del frontend\n│ \n├── 📁 hive-scripts/ # Scripts para gestión de tablas y datos en Hive\n│ ├── create_tables.hql # Definición de tablas\n│ ├── load_data.hql # Scripts para cargar datos\n│ └── queries.hql # Consultas predefinidas\n│ \n├── 📁 docs/ # Documentación adicional\n│ \n├── .env # Variables de entorno (API keys, rutas, etc.)\n├── .gitignore # Archivos a ignorar por Git\n├── README.md # Documentación principal\n└── setup.sh # Script para configurar el entorno\n\n## Guía de Instalación
+El proyecto está organizado en varias carpetas principales que representan los diferentes componentes del sistema. A continuación, se proporciona una descripción general de cada carpeta clave:
+
+### 📁 AI_cluster  
+Contiene los scripts y herramientas relacionadas con el procesamiento y análisis de datos utilizando modelos de IA.  
+- **Principales funciones:** generación de datos, detección de objetos con YOLO, detección de movimiento y procesamiento de videos.  
+- **Archivos clave:**  
+  - `main.py`: Punto de entrada para ejecutar el análisis principal.  
+  - `src/`: Contiene módulos como `gpt_detector.py` y `yolo_detection.py` para tareas específicas de IA.  
+
+### 📁 API_cluster  
+Aloja la implementación de la API RESTful en Python.  
+- **Principales funciones:** manejo de tareas en segundo plano (Celery), conexión a Hive, y exposición de datos procesados.  
+- **Archivos clave:**  
+  - `main.py`: Inicia la API con FastAPI.  
+  - `tasks.py`: Gestiona tareas en segundo plano.  
+  - `requirements.txt`: Lista de dependencias necesarias para el entorno.  
+e
+### 📁 data_cluster  
+Contiene los datos de entrada y scripts para cargar y gestionar tablas en Hive.  
+- **Archivos clave:**  
+  - `data_sd/`: Archivos CSV con datos de características, objetos y escenarios.  
+  - `deploy_hive.py`: Script para desplegar y configurar Hive.  
+  - `querys.sql`: Consultas SQL predefinidas para el sistema.  
+
+### 📁 web_platform  
+Contiene la implementación de la plataforma web.  
+- **Backend:** Construido con Node.js, permite cargar videos y realizar análisis mediante la API.  
+  - **Archivos clave:**  
+    - `app.js`: Punto de entrada para el servidor backend.  
+    - `controllers/`: Lógica de control para procesar videos y gestionar resultados.  
+  - **Carpetas adicionales:**  
+    - `uploads/`: Almacena videos cargados por los usuarios.  
+    - `detections/`: Resultados de análisis de videos, como imágenes y JSON.  
+- **Frontend:** Construido con React, proporciona una interfaz para cargar videos, iniciar análisis y visualizar resultados.  
+  - **Archivos clave:**  
+    - `src/components/`: Componentes principales como botones, listas de videos y resultados.  
+    - `App.js`: Entrada principal de la aplicación web.
+
+    
+## Guía de Instalación
 
 ### 1. Clonar el repositorio
-git clone https://github.com/usuario proyecto-videovigilancia.git\ncd proyecto-videovigilancia
+    ```bash
+    git clone https://github.com/angel452/Surveillance-IA-distributed.git
+    ```
 
-### 2. Configurar el backend
-1. Navega a la carpeta api/:
- cd api
-2. Instala las dependencias:
-  pip install -r requirements.txt
-3. Configura las variables de entorno en el archivo .env:\n - Crea un archivo .env en la carpeta api/ con el siguiente contenido:\n HIVE_HOST=localhost\n HIVE_PORT=10000\n HIVE_USERNAME=hive\n HIVE_DATABASE=default\n OPENAI_API_KEY=tu-clave-aqui\n - Reemplaza tu-clave-aqui con tu clave API de OpenAI.\n\n### 3. Configurar el frontend\n1. Navega a la carpeta frontend/:\n cd ../frontend\n2. Instala las dependencias:\n npm install\n\n### 4. Configurar Hive\n1. Configura el clúster de Hadoop y Hive.\n2. Ejecuta los scripts en hive-scripts/ para crear tablas y cargar datos:\n hive -f hive-scripts/create_tables.hql\n hive -f hive-scripts/load_data.hql\n\n### 5. Iniciar el sistema\n1. Inicia el backend:\n python app.py\n2. Inicia el frontend:\n npm start\n\n## Configuración\n\n- API REST: Configura la clave API y el host en .env.\n- Hive: Modifica los scripts de tablas y carga de datos según tus necesidades.\n\n## Uso\n\n1. Accede a la plataforma web en http://localhost:3000.\n2. Utiliza la API para realizar consultas programáticas:\n - GET /api/videos\n - POST /api/analyze\n3. Analiza los datos almacenados en Hive a través de la plataforma o utilizando HiveQL.\n\n## Arquitectura\n\nEl sistema está compuesto por:\n- Frontend (React): Para la interacción del usuario.\n- Backend (Python/Flask): Gestiona las solicitudes y la lógica empresarial.\n- Hive (HDFS): Almacenamiento distribuido para grandes volúmenes de datos.\n- Clúster Hadoop: Para garantizar escalabilidad y procesamiento distribuido.\n\n## Contribuciones\n\n1. Realiza un fork del repositorio.\n2. Crea una rama nueva:\n git checkout -b mi-feature\n3. Realiza los cambios y haz un commit:\n git commit -m "Descripción de los cambios"\n4. Envía tus cambios:\n git push origin mi-feature\n\n## Licencia\n\nEste proyecto está licenciado bajo la licencia MIT. Consulta el archivo LICENSE para más detalles
+## 2. Crear el clúster en AWS
+
+Para comenzar, crea el clúster de Amazon EMR. Asegúrate de que el clúster esté configurado con Hive y HDFS para el almacenamiento distribuido.
+
+### 3. Subir el código de la API y los datos al clúster
+
+Usa el siguiente comando scp para transferir las carpetas API_cluster y data_cluster al clúster de EC2 en el nodo maestro:
+
+    ``` bash
+    scp -i "<ruta_a_tu_llave.pem>" -r API_cluster <usuario>@<dirección_ec2>:/<ruta_destino>
+    scp -i "<ruta_a_tu_llave.pem>" -r data_cluster <usuario>@<dirección_ec2>:/<ruta_destino>
+    ```
+
+### 4. Configurar el entorno
+Una vez que hayas subido los archivos, conéctate a tu instancia EC2 y asegúrate de que todas las dependencias necesarias estén instaladas:
+
+- Para la API en Python, instala las dependencias utilizando pip:
+
+    ``` bash
+    pip install -r API_cluster/requirements.txt
+    ```
+
+### 5. Instanciar y crear las tablas en Hive
+
+Para crear las tablas necesarias en Hive, entra como usuario root y ejecuta Hive desde la CLI:
+
+1. Accede a la instancia EC2 como root:
+
+    ``` bash
+    sudo su 
+    ```
+
+2. Lanza la CLI de Hive:
+    ``` bash
+    hive
+    ```
+3. Dentro de la CLI de Hive, carga las consultas SQL para crear las tablas usando el archivo querys.sql ubicado en data_cluster o se puede colocar manualmente en el cli de hive todas las consultas:
+
+    ``` bash
+    source /home/ec2-user/data_cluster/querys.sql;
+    ```
+
+### 6. Iniciar el servidor de la API
+Para iniciar el servidor de la API, usa el script `start.sh` dentro de la carpeta `API_cluster`. Si es necesario, puedes modificar el puerto en este archivo antes de ejecutarlo.
+
+1. Navega a la carpeta `API_cluster`:
+   ```bash
+   cd API_cluster
+   ```
+
+2. Si necesitas cambiar el puerto en el que se ejecuta la API, edita el archivo start.sh y ajusta la configuración de puerto:
+
+    ``` bash
+    nano start.sh
+    ``` 
+3. Busca la línea donde se define el puerto y modifícalo según sea necesario.
+    ``` bash
+    ./start.sh
+    ```
+

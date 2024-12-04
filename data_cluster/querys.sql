@@ -71,42 +71,4 @@ INTO TABLE features;
 SELECT * FROM objects LIMIT 10;
 SELECT * FROM scenarios LIMIT 10;
 SELECT * FROM features LIMIT 10;
-
-
-SELECT video_name
-FROM scenarios
-WHERE environment_type = 'parking_lot'; 
-
-----
-SELECT video_name
-FROM objects
-WHERE object_name = 'umbrella';  -- Cambia 'umbrella' por el objeto que desees
-
-
-SELECT video_name
-FROM objects
-WHERE object_name = 'umbrella'  -- Cambia 'umbrella' por el objeto que desees
-  AND rgb_color = '(255, 255, 0)';  -- Cambia '(255, 255, 0)' por el color que desees
-
-
-SELECT video_name
-FROM objects
-WHERE object_name = 'umbrella'  -- Cambia 'umbrella' por el objeto que desees
-  AND proximity = 'near';  -- Cambia 'near' por la proximidad que desees
-
-
-SELECT video_name, sec
-FROM objects
-WHERE object_name = 'umbrella'  -- Cambia 'umbrella' por el objeto que desees
-AND rgb_color = 'gray'  -- Cambia '(255, 255, 0)' por el color que desees
-AND proximity = 'near';  -- Cambia 'near' por la proximidad que desees
-
-
-
-SELECT video_name, COUNT(*) AS object_count
-FROM objects
-WHERE object_name = 'umbrella'  -- Cambia 'umbrella' por el objeto que desees
-GROUP BY video_name
-ORDER BY object_count DESC;
-
-drop table objects;
+  
