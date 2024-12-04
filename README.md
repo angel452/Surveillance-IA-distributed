@@ -301,7 +301,7 @@ La arquitectura que utlizamos consta de lo siguiente:
 ![1_1_SubirVideo](Images/miro1.png)
 2. Para la extraccion de los tags de los videos, realizamos primero un analisis de movimiento del video, buscando los frames mas relevantes del video. Luego, analizamos las imagenes con yolo para obtener los objetos y sus caracteristicas. En el caso del los enviroments usamos un LLM para su identificacion.
 ![1_1_SubirVideo](Images/miro2.png)
-3. Podemos realizar 3 tipos de consultas, luego del analisis del video. La primera, devuelve los videos que poseen el mismo enviroment. En la segunda, devuelve los videos con el mismo objeto y caracteristicas, junto con el segundo preciso de la identificacion. La tercera consulta devuelve en orden de relevacia  los videos donde aparece el objeto, junto con el segundo y las veces de aparicion. Mientras mas veces se identifica el objeto mas arriba en la lista estara.
+3. Podemos realizar 3 tipos de consultas, luego del analisis del video. La primera, devuelve los videos que poseen el mismo enviroment. En la segunda, devuelve los videos con el mismo objeto y caracteristicas, junto con el segundo preciso de la identificacion. La tercera consulta devuelve en orden de relevacia los videos donde aparece el objeto, junto con el segundo y las veces de aparicion. Mientras mas veces se identifica el objeto mas arriba en la lista estara.
 ![1_1_SubirVideo](Images/miro3.png)
 ## 7. Contribuidores
 
