@@ -227,7 +227,7 @@ Una vez que el sistema esté corriendo en el puerto 5000 o 5001, se accederá a 
 
 ![1_1_SubirVideo](Images/1_1_SubirVideo.png)
 
-- Después de seleccionar el archivo, el sistema comenzará a cargar el video. Dependiendo del tamaño del video, el proceso puede tardar unos minutos.
+- Después de seleccionar el archivo, el sistema comenzará a cargar el video. Dependiendo del tamaño del video, el proceso puede tardar unos segundos mas.
 
 - Una vez que el video haya sido cargado exitosamente, aparecerá una alerta en el navegador indicando: "Video Uploaded successfully".
 
@@ -264,12 +264,13 @@ Tras completar el escaneo, los resultados de la detección de objetos por parte 
 ### 4. Visualización de la Tabla General
 La plataforma mantiene una tabla general que muestra información clave de cada video procesado. Esta tabla tiene tres columnas:
 1. Video Name: El nombre del video subido.
-2. Environment Type: El tipo de entorno donde se detectaron los objetos (por ejemplo, "exterior", "interior").
+2. Environment Type: El entorno donde se detectaron los objetos (por ejemplo, "plaza", "estacionamiento", etc).
 3. Objects Detected: Los objetos detectados en el video, junto con sus características como objeto, color y proximidad.
 
-Al hacer clic en el botón "Objects Detected" de cualquier fila, se desplegará una ventana con información detallada de los objetos detectados, incluyendo las características y la proximidad de los mismos.
+Al hacer clic en el botón "Segundo X" de cualquier fila, se desplegará una ventana con información detallada de los objetos detectados en ese segundo especificado, incluyendo las características y la proximidad de los mismos.
 
 ![1_1_SubirVideo](Images/4_1_InformacionTABLA.png)
+
 ![1_1_SubirVideo](Images/4_2_InformacionTABLA.png)
 
 ### 5. Realizar Consultas
@@ -287,12 +288,22 @@ Existen tres tipos de consultas que pueden realizarse:
   - Objeto, color y proximidad.
 
 Luego, presione el botón "Make Query".
+
 ![1_1_SubirVideo](Images/5_2_ConsultaTIPO2.png)
-
-
 
 - Consulta Tipo 3: Realice una consulta priorizando un objeto específico. Para ello, seleccione el Objeto y haga clic en el botón "Priority Object". Esta consulta buscará el objeto seleccionando aquellos que aparezcan con mayor frecuencia, otorgándoles prioridad en los resultados.
 
+![1_1_SubirVideo](Images/5_3_ConsultaTIPO3.png)
+
+- Después de configurar la consulta, presione el botón "Make Query" para ejecutarla.
+
+![1_1_SubirVideo](Images/5_4_SendQuery.png)
+
+### 6. Resultados de la Consulta
+
+Una vez realizada la consulta, los resultados se mostrarán en la sección "Search Results". Aquí se presentarán los videos que coinciden con los criterios de búsqueda especificados.
+
+![1_1_SubirVideo](Images/6_1_ResultadConsulta.png)
 
 
 ## 6. Arquitectura
