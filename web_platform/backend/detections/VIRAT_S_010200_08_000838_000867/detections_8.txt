@@ -1,0 +1,25 @@
+tree,1105,560,38,30,teal,near,8
+tree,1156,453,124,102,black,middle,8
+tree,428,442,35,45,black,middle,8
+tree,1111,420,54,44,black,middle,8
+tree,1063,417,47,104,teal,middle,8
+tree,0,412,104,308,black,middle,8
+tree,0,400,18,59,black,middle,8
+tree,437,395,29,38,black,middle,8
+tree,0,222,332,192,black,far,8
+tree,572,220,201,121,gray,far,8
+tree,433,198,121,128,black,far,8
+tree,367,195,65,85,gray,far,8
+tree,280,192,55,34,black,far,8
+tree,664,149,106,29,gray,far,8
+tree,876,144,96,44,gray,far,8
+tree,791,100,101,88,gray,far,8
+tree,1248,80,32,62,black,far,8
+tree,1010,64,270,216,black,far,8
+tree,227,45,58,98,black,far,8
+tree,849,0,133,29,black,far,8
+tree,305,0,80,57,olive,far,8
+person,494,297,548,384,gray,middle,8
+potted plant,570,255,632,370,black,middle,8
+person,296,235,314,270,black,far,8
+bicycle,334,273,352,309,gray,middle,8
