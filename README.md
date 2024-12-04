@@ -1,5 +1,7 @@
 # Reconocimiento de objetos en videovigilancia y almacenamiento en sistema distribuido
 
+![1_1_SubirVideo](Images/logo.jpg)
+
 Este proyecto integra inteligencia artificial con almacenamiento distribuido para videovigilancia. Utiliza YOLO para detección de objetos y algoritmos para extraer características. Los datos se gestionan en un clúster con Hive sobre HDFS, permitiendo búsquedas eficientes de objetos similares. Incluye una plataforma web y una API REST para análisis y visualización.
 
 ## Tabla de Contenidos
@@ -51,7 +53,7 @@ El backend requiere:
 El frontend está desarrollado en React y requiere un entorno compatible con Node.js y npm.
 
 ### Infraestructura
-El sistema se monta en un clúster **Amazon EMR** para proporcionar escalabilidad y procesamiento distribuido. Asegúrate de configurar un clúster adecuado con Hive y HDFS.  
+El sistema se monta en un clúster **Amazon EMR** para proporcionar escalabilidad y procesamiento distribuido. Asegúrate de configurar un clúster adecuado con `Hive` y `HDFS`.  
 
 
 ## Estructura del Proyecto
@@ -107,6 +109,11 @@ Contiene la implementación de la plataforma web.
 
 Para comenzar, crea el clúster de Amazon EMR. Asegúrate de que el clúster esté configurado con Hive y HDFS para el almacenamiento distribuido.
 
+![Herramientas](Images/NameApplications.png)
+![Configuracion de cluster](Images/Clusterconfiguration.png)
+![Roles](Images/IdentityAccessManagement.png)
+
+
 ### 3. Subir el código de la API y los datos al clúster
 
 Usa el siguiente comando scp para transferir las carpetas API_cluster y data_cluster al clúster de EC2 en el nodo maestro:
@@ -144,6 +151,7 @@ Para crear las tablas necesarias en Hive, entra como usuario root y ejecuta Hive
     ``` bash
     source /home/ec2-user/data_cluster/querys.sql;
     ```
+![Desplegar Hive](Images/hive.png)
 
 ### 6. Iniciar el servidor de la API
 Para iniciar el servidor de la API, usa el script `start.sh` dentro de la carpeta `API_cluster`. Si es necesario, puedes modificar el puerto en este archivo antes de ejecutarlo.
@@ -162,6 +170,8 @@ Para iniciar el servidor de la API, usa el script `start.sh` dentro de la carpet
     ``` bash
     ./start.sh
     ```
+
+![Desplegar API](Images/api_run.png)
 
 ### 7. Levantar la Plataforma Web
 
@@ -287,9 +297,11 @@ Luego, presione el botón "Make Query".
 
 ## 6. Arquitectura
 La arquitectura que utlizamos consta de lo siguiente: 
-1. Primero, los videos que son ingresaddos por el frontend en el navegador son enviados a ser procesa por yolo y un LLM para la ubicacion y extrancion de los tags mas relevantes, luego 
+1. Primero, los videos que son ingresados por el frontend en el navegador son procesados por yolo y un LLM para la ubicacion y extrancion de los tags mas relevantes, luego se puede realizar 3 tipos de consultas, que son eviados al nodo maestro del cluster en AWS, a travez de una API personalizada para esta tarea. Estas consultas son realizadas con Hive y la respuesta es enviada de vuelta al frontend, usando el mismo canal.
 ![1_1_SubirVideo](Images/miro1.png)
+2. Para la extraccion de los tags de los videos, realizamos primero un analisis de movimiento del video, buscando los frames mas relevantes del video. Luego, analizamos las imagenes con yolo para obtener los objetos y sus caracteristicas. En el caso del los enviroments usamos un LLM para su identificacion.
 ![1_1_SubirVideo](Images/miro2.png)
+3. Podemos realizar 3 tipos de consultas, luego del analisis del video. La primera, devuelve los videos que poseen el mismo enviroment. En la segunda, devuelve los videos con el mismo objeto y caracteristicas, junto con el segundo preciso de la identificacion. La tercera consulta devuelve en orden de relevacia  los videos donde aparece el objeto, junto con el segundo y las veces de aparicion. Mientras mas veces se identifica el objeto mas arriba en la lista estara.
 ![1_1_SubirVideo](Images/miro3.png)
 ## 7. Contribuidores
 
