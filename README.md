@@ -5,14 +5,14 @@ Este proyecto integra inteligencia artificial con almacenamiento distribuido par
 ## Tabla de Contenidos
 
 
-1. Características Principales
-2. Requisitos Previos
-3. Estructura del Proyecto
-4. Guía de Instalación
-5. Configuración
-6. Uso
-7. Arquitectura
-8. Contribuciones
+1. [Características Principales](#características-principales)
+2. [Requisitos Previos](#requisitos-previos)
+3. [Estructura del Proyecto](#estructura-del-proyecto)
+4. [Guía de Instalación](#guía-de-instalación)
+5. [Configuración](#configuración)
+6. [Uso](#uso)
+7. [Arquitectura](#arquitectura)
+8. [Contribuciones](#contribuciones)
 
 
 ## Características Principales
