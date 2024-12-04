@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import Header from './components/Header';
 import UploadButton from './components/UploadButton';
 import ScanButton from './components/ScanButton';
-import SearchBar from './components/SearchBar';
 import VideoList from './components/VideoList';
 import mockData from './mockData.json';
 import VideoResults from './components/VideoResults';
@@ -33,17 +32,19 @@ const App = () => {
   const fetchVideos = async () => {
     try {
       const response = await axios.get('http://localhost:5000/api/videos/videos');
-      setVideos(response.data.videos);
+
+      if(response.data.videos.length === 0) {
+        setVideos([]);
+      }
+      else {
+        setVideos(response.data.videos);
+      }
       setLoading(false);
     }
     catch (error) {
       console.error('Error fetching videos:', error);
       setLoading(false);
     }
-  };
-
-  const handleSearch = (query) => {
-    setSearchQuery(query);
   };
 
   const handleVideoUpload = (filePath, fileName) => {
@@ -137,26 +138,6 @@ const App = () => {
     }
   };
 
-  // const handleScanVideos = async () => {
-  //   try {
-  //     const response = await fetch('http://localhost:5000/api/videos/scan', {
-  //       method: 'POST',
-  //       headers: { 'Content-Type': 'application/json' },
-  //       body: JSON.stringify({
-  //         videos: Object.values(videoPaths), // Asegúrate de enviar los videos correctamente
-  //       }),
-  //     });
-  
-  //     if (!response.ok) throw new Error('Error scanning videos..');
-  //     const data = await response.json();
-  //     setScanResults(data.results); // Asegúrate de que el backend devuelve resultados de la escaneo
-  //     alert('Videos scanned successfully');
-  //   } catch (error) {
-  //     console.error('Error scanning videos...:', error);
-  //     alert('Failed to scan videos. Check the backend.');
-  //   }
-  // };  
-
   useEffect(() => {
     fetchVideos();
     document.addEventListener('click', handleClickOutside);
@@ -164,31 +145,6 @@ const App = () => {
       document.removeEventListener('click', handleClickOutside);
     };
   }, [menuVisible, handleClickOutside]);
-
-  const renderSearchResults = () => {
-    if (!searchQuery) return <p>No search results</p>;
-
-    const filteredResults = results.filter((item) =>
-      item.keyword.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-
-    return filteredResults.length ? (
-      filteredResults.map((item, index) => (
-        <div key={index}>
-          <strong>{item.keyword}</strong> - {item.description} -{' '}
-          <a
-            href="/"
-            onClick={() => handleLinkClick(item.time, item.video)}
-            style={{ color: 'blue', textDecoration: 'underline' }}
-          >
-            Video {item.video}
-          </a>
-        </div>
-      ))
-    ) : (
-      <p>No matches found</p>
-    );
-  };
 
   return (
     <div>
@@ -205,8 +161,6 @@ const App = () => {
           setScanning={setScanning}
           scanning={scanning}
         />
-
-        {/* <SearchBar onSearch={handleSearch} /> */}
 
         {/* Targetas */}
         <div className="row" style={{ display: 'flex' }}>
@@ -305,7 +259,6 @@ const App = () => {
               }}
             >
               <h5>Search Results</h5>
-                {/* {renderSearchResults()} */}
                 {finalResults.length ? (
                   <ul>
                     {finalResults.map((item, index) => (
