@@ -1,70 +1,165 @@
-# Getting Started with Create React App
+# Reconocimiento de objetos en videovigilancia y almacenamiento en sistema distribuido
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto integra inteligencia artificial con almacenamiento distribuido para videovigilancia. Utiliza YOLO para detección de objetos y algoritmos para extraer características. Los datos se gestionan en un clúster con Hive sobre HDFS, permitiendo búsquedas eficientes de objetos similares. Incluye una plataforma web y una API REST para análisis y visualización.
 
-## Available Scripts
+## Tabla de Contenidos
 
-In the project directory, you can run:
 
-### `npm start`
+1. Características Principales
+2. Requisitos Previos
+3. Estructura del Proyecto
+4. Guía de Instalación
+5. Configuración
+6. Uso
+7. Arquitectura
+8. Contribuciones
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Características Principales
+- Detección precisa: Identificación de objetos y extracción de características clave en los videos mediante modelos de IA como YOLO.
+- Almacenamiento escalable: Gestión eficiente de grandes volúmenes de datos estructurados utilizando Hive sobre HDFS en un clúster distribuido.
+- Plataforma web intuitiva: Interfaz para cargar videos, analizar objetos detectados y gestionar resultados de análisis.
+- Integración API: Acceso programático para consultar y gestionar datos a través de una API RESTful en el cluster.
 
-### `npm test`
+## Requisitos Previos
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Antes de comenzar, asegúrate de tener instalados los siguientes componentes necesarios para cada parte del sistema:
 
-### `npm run build`
+### API (Python)
+La API utiliza Python y requiere las siguientes bibliotecas y herramientas:  
+- FastAPI  
+- Uvicorn  
+- Celery  
+- Redis  
+- PyHive  
+- Thrift  
+- Thrift-SASL  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Inteligencia Artificial (Procesamiento de Videos)
+El análisis y detección de objetos requiere las siguientes bibliotecas:  
+- OpenAI (para tareas de procesamiento avanzado)  
+- dotenv  
+- OpenCV  
+- NumPy  
+- Ultralytics YOLO  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Backend
+El backend requiere:  
+- Node.js  
+- npm  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Frontend
+El frontend está desarrollado en React y requiere un entorno compatible con Node.js y npm.
 
-### `npm run eject`
+### Infraestructura
+El sistema se monta en un clúster **Amazon EMR** para proporcionar escalabilidad y procesamiento distribuido. Asegúrate de configurar un clúster adecuado con Hive y HDFS.  
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Estructura del Proyecto
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+El proyecto está organizado en varias carpetas principales que representan los diferentes componentes del sistema. A continuación, se proporciona una descripción general de cada carpeta clave:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 📁 AI_cluster  
+Contiene los scripts y herramientas relacionadas con el procesamiento y análisis de datos utilizando modelos de IA.  
+- **Principales funciones:** generación de datos, detección de objetos con YOLO, detección de movimiento y procesamiento de videos.  
+- **Archivos clave:**  
+  - `main.py`: Punto de entrada para ejecutar el análisis principal.  
+  - `src/`: Contiene módulos como `gpt_detector.py` y `yolo_detection.py` para tareas específicas de IA.  
 
-## Learn More
+### 📁 API_cluster  
+Aloja la implementación de la API RESTful en Python.  
+- **Principales funciones:** manejo de tareas en segundo plano (Celery), conexión a Hive, y exposición de datos procesados.  
+- **Archivos clave:**  
+  - `main.py`: Inicia la API con FastAPI.  
+  - `tasks.py`: Gestiona tareas en segundo plano.  
+  - `requirements.txt`: Lista de dependencias necesarias para el entorno.  
+e
+### 📁 data_cluster  
+Contiene los datos de entrada y scripts para cargar y gestionar tablas en Hive.  
+- **Archivos clave:**  
+  - `data_sd/`: Archivos CSV con datos de características, objetos y escenarios.  
+  - `deploy_hive.py`: Script para desplegar y configurar Hive.  
+  - `querys.sql`: Consultas SQL predefinidas para el sistema.  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 📁 web_platform  
+Contiene la implementación de la plataforma web.  
+- **Backend:** Construido con Node.js, permite cargar videos y realizar análisis mediante la API.  
+  - **Archivos clave:**  
+    - `app.js`: Punto de entrada para el servidor backend.  
+    - `controllers/`: Lógica de control para procesar videos y gestionar resultados.  
+  - **Carpetas adicionales:**  
+    - `uploads/`: Almacena videos cargados por los usuarios.  
+    - `detections/`: Resultados de análisis de videos, como imágenes y JSON.  
+- **Frontend:** Construido con React, proporciona una interfaz para cargar videos, iniciar análisis y visualizar resultados.  
+  - **Archivos clave:**  
+    - `src/components/`: Componentes principales como botones, listas de videos y resultados.  
+    - `App.js`: Entrada principal de la aplicación web.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    
+## Guía de Instalación
 
-### Code Splitting
+### 1. Clonar el repositorio
+    ```bash
+    git clone https://github.com/angel452/Surveillance-IA-distributed.git
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 2. Crear el clúster en AWS
 
-### Analyzing the Bundle Size
+Para comenzar, crea el clúster de Amazon EMR. Asegúrate de que el clúster esté configurado con Hive y HDFS para el almacenamiento distribuido.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 3. Subir el código de la API y los datos al clúster
 
-### Making a Progressive Web App
+Usa el siguiente comando scp para transferir las carpetas API_cluster y data_cluster al clúster de EC2 en el nodo maestro:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+    ``` bash
+    scp -i "<ruta_a_tu_llave.pem>" -r API_cluster <usuario>@<dirección_ec2>:/<ruta_destino>
+    scp -i "<ruta_a_tu_llave.pem>" -r data_cluster <usuario>@<dirección_ec2>:/<ruta_destino>
+    ```
 
-### Advanced Configuration
+### 4. Configurar el entorno
+Una vez que hayas subido los archivos, conéctate a tu instancia EC2 y asegúrate de que todas las dependencias necesarias estén instaladas:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Para la API en Python, instala las dependencias utilizando pip:
 
-### Deployment
+    ``` bash
+    pip install -r API_cluster/requirements.txt
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### 5. Instanciar y crear las tablas en Hive
 
-### `npm run build` fails to minify
+Para crear las tablas necesarias en Hive, entra como usuario root y ejecuta Hive desde la CLI:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Accede a la instancia EC2 como root:
+
+    ``` bash
+    sudo su 
+    ```
+
+2. Lanza la CLI de Hive:
+    ``` bash
+    hive
+    ```
+3. Dentro de la CLI de Hive, carga las consultas SQL para crear las tablas usando el archivo querys.sql ubicado en data_cluster o se puede colocar manualmente en el cli de hive todas las consultas:
+
+    ``` bash
+    source /home/ec2-user/data_cluster/querys.sql;
+    ```
+
+### 6. Iniciar el servidor de la API
+Para iniciar el servidor de la API, usa el script `start.sh` dentro de la carpeta `API_cluster`. Si es necesario, puedes modificar el puerto en este archivo antes de ejecutarlo.
+
+1. Navega a la carpeta `API_cluster`:
+   ```bash
+   cd API_cluster
+   ```
+
+2. Si necesitas cambiar el puerto en el que se ejecuta la API, edita el archivo start.sh y ajusta la configuración de puerto:
+
+    ``` bash
+    nano start.sh
+    ``` 
+3. Busca la línea donde se define el puerto y modifícalo según sea necesario.
+    ``` bash
+    ./start.sh
+    ```
+
